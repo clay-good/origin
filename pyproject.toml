@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "origin-provenance"
+version = "0.1.0"
+description = "Runtime data provenance for AI pipelines"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Origin Contributors"}
+]
+keywords = [
+    "provenance",
+    "data-lineage",
+    "ai",
+    "machine-learning",
+    "compliance",
+    "audit"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed"
+]
+dependencies = []
+
+[project.optional-dependencies]
+pytorch = ["torch>=2.0"]
+huggingface = ["datasets>=2.0"]
+all = ["torch>=2.0", "datasets>=2.0"]
+
+[project.scripts]
+origin = "origin.cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/clay-good/origin"
+Repository = "https://github.com/clay-good/origin"
+Documentation = "https://github.com/clay-good/origin#readme"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+origin = ["py.typed"]
